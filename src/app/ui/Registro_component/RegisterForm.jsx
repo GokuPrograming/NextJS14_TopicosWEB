@@ -1,5 +1,8 @@
+const { default: UserTable } = require("./UserTable");
+
 function RegisterForm() {
     return (
+        <>
         <div className="container mx-auto p-4">
             <h1 className="text-2xl mb-4">Registrar Usuario</h1>
             <form className="mb-4">
@@ -49,6 +52,8 @@ function RegisterForm() {
                 </div>
             </form>
         </div>
+        <UserTable/>
+    </>
     );
 }
 

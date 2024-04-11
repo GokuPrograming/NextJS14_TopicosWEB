@@ -11,13 +11,13 @@ function UserTable({ users }) {
             </tr>
           </thead>
           <tbody>
-            {users.map((user, index) => (
-              <tr key={index}>
-                <td className="border border-gray-300 px-4 py-2">{user.nombre}</td>
-                <td className="border border-gray-300 px-4 py-2">{user.apellidoPaterno}</td>
-                <td className="border border-gray-300 px-4 py-2">{user.apellidoMaterno}</td>
+           
+              <tr>
+                <td className="border border-gray-300 px-4 py-2"></td>
+                <td className="border border-gray-300 px-4 py-2"></td>
+                <td className="border border-gray-300 px-4 py-2"></td>
               </tr>
-            ))}
+       
           </tbody>
         </table>
       </div>
