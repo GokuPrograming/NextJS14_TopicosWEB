@@ -6,7 +6,7 @@ function UserTable({ refreshTable }) {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch('http://localhost:3000/usuario');
+      const response = await fetch('https://api-presentacion-topicos.onrender.com/usuario');
       const result = await response.json();
       setData(result.data);
       console.log(result.data);

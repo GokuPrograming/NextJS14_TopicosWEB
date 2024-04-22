@@ -6,11 +6,12 @@ function RegisterForm() {
     const [formData, setFormData] = useState({
         nombre: '',
         apellido_paterno: '',
-        apellido_materno: ''
+        apellido_materno: '',
+
     });
-// nos ayuda a administrar la actualizacion de la tabla
+    // nos ayuda a administrar la actualizacion de la tabla
     const [refreshTable, setRefreshTable] = useState(false);
-///ayuda a que los datos se ongresen
+    ///ayuda a que los datos se ongresen
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -18,12 +19,12 @@ function RegisterForm() {
             [name]: value
         });
     };
-///evento para cuando se ejecute el registro
+    ///evento para cuando se ejecute el registro
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:3000/usuario/registro', {
+            const response = await fetch('https://api-presentacion-topicos.onrender.com/usuario/registro', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -33,14 +34,17 @@ function RegisterForm() {
 
             const data = await response.json();
             console.log(data);
-
+            //alert(data);
+            alert("se registro exitosamente, gracias")
             // Actualizar el estado para refrescar la tabla
             setRefreshTable(!refreshTable);
             setFormData({
                 nombre: '',
                 apellido_paterno: '',
-                apellido_materno: ''
+                apellido_materno: '',
+            
             });
+            console.log("este es form data: ",formData)
         } catch (error) {
             console.error('Error al enviar los datos:', error);
         }
@@ -92,6 +96,7 @@ function RegisterForm() {
                             placeholder="Ingrese su apellido materno"
                         />
                     </div>
+
                     <div className="flex justify-end">
                         <button
                             type="submit"

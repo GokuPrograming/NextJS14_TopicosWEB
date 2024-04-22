@@ -14,7 +14,7 @@ function Navbar() {
             <Link href="/" passHref>
               <span className="hover:text-gray-300 cursor-pointer">Inicio</span>
             </Link>
-            <Link href="/about" passHref>
+            <Link href="/pages/Acerca_de" passHref>
               <span className="hover:text-gray-300 cursor-pointer">Acerca de</span>
             </Link>
             <Link href="/contact" passHref>
